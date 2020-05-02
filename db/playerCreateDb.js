@@ -10,24 +10,15 @@ const createPlayerDb = (name, email, handicap) => {
     email:email,
     handicap: handicap
   });
-
-  // Open db
-  db.on('error', console.error.bind(console,'Mongo Connection Error:'));
-  db.once('open',function(){
-    console.log('BANKS OPEN');
-
-
-      newPlayer.save(function(err){
-        if (err) throw err;
-        console.log('player created!');
-      });
-    //}
-  })
-
-
+  console.log('From DB createPlayerDb')
+  console.log(newPlayer);
+  newPlayer.save(function(err){
+    if (err) throw err;
+    console.log('player created!');
+  });
 
 };
 
 module.exports = {
   createPlayerDb
-}
+};

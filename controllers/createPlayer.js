@@ -6,12 +6,9 @@ const { createPlayer } = require('../services/playerService')
 
 const postCreatePlayer = async (req, res, next) => {
   //const {name, email, handicap} = req.body
-
-
-
-
   try {
     /* Get data from post body*/
+    console.log('From Controllers:')
     console.log(req.body);
     var name = req.body.name;
     var email = req.body.email;

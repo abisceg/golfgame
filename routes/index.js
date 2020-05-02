@@ -1,11 +1,17 @@
 const express = require('express')
-// 'out of controllers folder, pull file createPlayer.js'
-const postCreatePlayer = require('../controllers/createPlayer')
 const router = express.Router()
-console.log("Made it router")
+// 'out of controllers folder, pull file createPlayer.js'
+const { postCreatePlayer } = require('../controllers/createPlayer')
+
 // route middleware that will happen on every request
 router.get('/', (req, res) => {
   res.status(200).json({ message: 'Connected!' });
 });
-router.post('/CreatePlayer', postCreatePlayer)
+// CreatePlayer routes
+router.post('/CreatePlayer',(req, res, next) => {
+  console.log('from ROUTES:');
+  console.log(req.body);
+  postCreatePlayer(req,res,next);
+
+})
 module.exports = router
