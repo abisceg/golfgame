@@ -4,20 +4,19 @@ var Schema = mongoose.Schema;
 
 //Define a Schema
 var gameSchema = new Schema({
-  name: String,
-  gametype: String,
+  gameType: String,
   course: String,
   coursePar: Number,
   courseHolesPar: [Number],
   startDate: {type: Date, default: Date.now },
-  playersA: {type:Schema.Types.ObjectId,ref:'email'},
-  playerAscores: [Number],
-  playersB: {type:Schema.Types.ObjectId,ref:'email'},
-  playerBscores: [Number],
-  playersC: {type:Schema.Types.ObjectId,ref:'email'},
-  playerCscores: [Number],
-  playersD: {type:Schema.Types.ObjectId,ref:'email'},
-  playerDscores: [Number]
+  playerA: {type:Schema.Types.ObjectId,ref:'email'},
+  playerAScores: [Number],
+  playerB: {type:Schema.Types.ObjectId,ref:'email'},
+  playerBScores: [Number],
+  playerC: {type:Schema.Types.ObjectId,ref:'email'},
+  playerCScores: [Number],
+  playerD: {type:Schema.Types.ObjectId,ref:'email'},
+  playerDScores: [Number]
 });
 
 //create model to import

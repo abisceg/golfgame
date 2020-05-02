@@ -3,7 +3,7 @@ const { createPlayer } = require('../services/playerService')
 
 // call othe rimport services, or same service
 //     but diff functions here if Needed
-
+// define post function
 const postCreatePlayer = async (req, res, next) => {
   //const {name, email, handicap} = req.body
   try {
@@ -13,7 +13,7 @@ const postCreatePlayer = async (req, res, next) => {
     var name = req.body.name;
     var email = req.body.email;
     var handicap = req.body.handicap;
-    await createPlayer(name, email, handicap)
+    await createPlayer(name, email, handicap);
     // other service call (or same service, different
     // function can go here)
    // i.e. - await generateBlogpostPreview()

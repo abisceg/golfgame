@@ -3,7 +3,7 @@ var player = require('./schemas/players');
 //set up mongoose Connection
 mongoose.connect('mongodb://localhost:27017/golfappdb',{useNewUrlParser:true});
 var db = mongoose.connection;
-
+// create player in db function def
 const createPlayerDb = (name, email, handicap) => {
   var newPlayer = new player({
     name:name,
